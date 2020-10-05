@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ConsoleAppInheritance.Model
 {
+    //    Child           Parent
     class WhiteBoardPen : Pen
     {
 
@@ -13,5 +14,14 @@ namespace ConsoleAppInheritance.Model
             Console.BackgroundColor = ConsoleColor.White;
         }
 
+        public new void WriteToScreen(string text)// override with the new keyword
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.BackgroundColor = ConsoleColor.White;
+
+            Console.WriteLine(text);
+
+            Console.ResetColor();
+        }
     }
 }
