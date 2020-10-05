@@ -23,5 +23,7 @@ namespace ConsoleAppInheritance.Model
 
             Console.ResetColor();
         }
+
+        public void ImAWhiteBordPen() { }
     }
 }
