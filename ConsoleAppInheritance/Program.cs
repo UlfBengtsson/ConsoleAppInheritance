@@ -1,4 +1,5 @@
 ﻿using ConsoleAppInheritance.Model;
+using ConsoleAppInheritance.Model.ExClasses;
 using System;
 using System.Collections.Generic;
 
@@ -90,6 +91,18 @@ namespace ConsoleAppInheritance
                     item.WriteToScreen("normal pen text");
                 }
             }
+        }
+
+        void ExInterface()
+        {
+            List<IDanger> dangers = new List<IDanger>();
+
+            dangers.Add(new Tool());
+            dangers.Add(new Dog());
+            //dangers.Add(new Cat());
+
+            dangers[0].DangerInfo();
+
         }
     }
 }
