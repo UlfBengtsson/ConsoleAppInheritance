@@ -1,6 +1,7 @@
 ﻿using ConsoleAppInheritance.Model;
 using ConsoleAppInheritance.Model.ExClasses;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ConsoleAppInheritance
@@ -95,6 +96,8 @@ namespace ConsoleAppInheritance
 
         void ExInterface()
         {
+            //IDanger danger = new IDanger();
+
             List<IDanger> dangers = new List<IDanger>();
 
             dangers.Add(new Tool());

@@ -1,19 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConsoleAppInheritance.Model
 {
-    class UserMenu : IMenuOptions
+    public class UserMenu : IMenuOptions
     {
+        int idCounter = 0;
+        List<User> users = new List<User>();
+
+
         public bool CreateAdmin(string userName, string password, int powerLevel)
         {
-            throw new NotImplementedException();
+            User user = users.SingleOrDefault(x => x.UserName.ToLower() == userName.ToLower());
+            if (user != null)
+            {
+                return false;
+            }
+            else
+            {
+                users.Add(new Admin() { Id = ++idCounter, UserName = userName, Password = password, PowerLevel = powerLevel });
+                return true;
+            }
         }
 
         public bool CreateUser(string userName, string password)
         {
-            throw new NotImplementedException();
+            User user = users.SingleOrDefault(x => x.UserName.ToLower() == userName.ToLower());
+            if (user != null)
+            {
+                return false;
+            }
+            else
+            {
+                users.Add(new User() { Id = ++idCounter, UserName = userName, Password = password});
+                return true;
+            }
         }
 
         public User GetCurrentUser()
