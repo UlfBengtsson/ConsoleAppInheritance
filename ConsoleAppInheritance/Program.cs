@@ -8,21 +8,53 @@ namespace ConsoleAppInheritance
     {
         static void Main(string[] args)
         {
+
+
+        }
+
+        static void PressAnyKeyToContinue()
+        {
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey(true);
+        }
+
+        static string AskUserFor(string what)
+        {
+            Console.Write($"Please input {what}: ");
+            return Console.ReadLine();
+        }
+
+        //----- exampel code methods ------------------------------
+
+        void ExInheritance()
+        {
             Pen pen = new Pen();
 
-            //pen.WriteToScreen("Hello World!");
+            pen.WriteToScreen("Hello World!");
 
             pen.SetColor("red");
 
-            //pen.WriteToScreen("Hello World!");
+            pen.WriteToScreen("Hello World!");
 
             WhiteBoardPen whiteBoardPen = new WhiteBoardPen();
 
-            //whiteBoardPen.WriteToScreen("Im a whitebord pen");
+            whiteBoardPen.WriteToScreen("Im a whitebord pen");
 
             whiteBoardPen.SetColor("red");
 
-            //whiteBoardPen.WriteToScreen("Im a whitebord pen");
+            whiteBoardPen.WriteToScreen("Im a red whitebord pen");
+
+        }
+
+        void Expoly()
+        {
+            Pen pen = new Pen();
+
+            pen.SetColor("red");
+
+            WhiteBoardPen whiteBoardPen = new WhiteBoardPen();
+
+            whiteBoardPen.SetColor("red");
 
             whiteBoardPen.ImAWhiteBordPen();
 
@@ -30,7 +62,13 @@ namespace ConsoleAppInheritance
 
             //will not work - wbPen.ImAWhiteBordPen
 
-            //wbPen.WriteToScreen("Poly?");
+            wbPen.WriteToScreen("Poly? yes but can only call on Pen members");
+        }
+
+        void ExPolyList()
+        {
+            Pen pen = new Pen();
+            WhiteBoardPen whiteBoardPen = new WhiteBoardPen();
 
             List<Pen> penBox = new List<Pen>();
 
@@ -52,7 +90,6 @@ namespace ConsoleAppInheritance
                     item.WriteToScreen("normal pen text");
                 }
             }
-
         }
     }
 }
